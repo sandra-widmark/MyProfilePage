@@ -9,7 +9,7 @@ export default class IntroSection extends React.Component {
        <Container d="flex" flexDir="column" justify="space-between" p={{ x: { xs: '2rem', md: '3rem' }, y: { xs: '2rem', md: '3rem' }}}>
             <Text 
                     tag="h2" 
-                    textSize="display2" 
+                    textSize="display1" 
                     textColor="darkgray"
                     textWeight="900"
                     m={{ b: '1rem' }}

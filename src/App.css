@@ -24,3 +24,14 @@
   list-style-type: none;
   padding-left: 0;
 }
+
+.main-nav-list li {
+  margin-bottom: 1.5rem;
+}
+
+.main-nav-list a {
+  color: #6400E4; 
+  font-weight: 700; 
+  font-size: 24px; 
+}
+

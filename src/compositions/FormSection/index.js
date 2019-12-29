@@ -25,8 +25,7 @@ const WeightInput = () => {
 export default class FormSection extends React.Component {
     render(){
         return (
-        <Container d="flex" justify="space-between"  p={{ x: { xs: '2rem', md: '3rem' }, y: { xs: '2rem', md: '3rem' }}}>
-          <Div bg="gray" p="2.5rem" rounded={{ tr: "xl"}}>
+        <Container d="flex" justify="space-around"  p={{ x: { xs: '2rem', md: '3rem' }, y: { xs: '2rem', md: '3rem' }}}>
             <Div
                       bg="white"
                       p="2.5rem"
@@ -37,10 +36,9 @@ export default class FormSection extends React.Component {
 
                     <Text 
                     tag="h2" 
-                    textSize="display2" 
+                    textSize="display1" 
                     textWeight="900"
                     textColor="darkgray"
-                    m={{ y: "1.5rem" }}
                     >
                   Skriv en kommentar
                 </Text>
@@ -55,29 +53,28 @@ export default class FormSection extends React.Component {
                 <Div d="flex" m={{ b: "4rem" }}>
                 </Div>
               <Div d="flex" justify="flex-end">
-                <ButtonSecondary color="brandprimary" text="Kommentera"></ButtonSecondary>
+                <ButtonSecondary hoverbg="brandprimary" hovercolor="white" color="brandprimary" text="Kommentera"></ButtonSecondary>
               </Div>
                       
             </Div>
-          </Div>
           <Div
-                    bg="white"
+                    bg="transparent"
                     p="2.5rem"
                     >
 
                   <Text 
                   tag="h2" 
-                  textSize="display2" 
+                  textSize="display1" 
                   textWeight="900"
                   textColor="darkgray"
                   m={{ y: "1.5rem" }}
                   >
                 Kommentarer
               </Text>
-                <Text p={{ t: "0.5rem", b: "0.5rem" }} textSize="subheader">
+                <Text p={{ t: "0.5rem", b: "0.5rem" }} textSize="subheader" textWeight="700">
                 Namn
               </Text>
-              <Text p={{ t: "0.5rem", b: "0.5rem" }} textSize="subheader">
+              <Text p={{ b: "0.5rem" }} textSize="subheader">
                 Kommentar lorem ipsum dolor sit amet
               </Text>
               <Div d="flex" m={{ b: "4rem" }}>

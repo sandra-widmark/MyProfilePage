@@ -1,76 +1,41 @@
 import React from "react";
 import { ThemeProvider, Div, Anchor, Tag,Col, SideDrawer, Row, Container, Text, Image, Button, Icon } from "atomize";
-import Switch from "../../components/switch"
+import Switcher from "../../components/switch"
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
+
 
 const BasicSideDrawer = ({ isOpen, onClose }) => {
   return (
     <SideDrawer isOpen={isOpen} onClose={onClose} p={{y:"3rem", l:"2rem"}}>
+
         <nav>
-            <ul className="main-nav-list">
-                <li>
-                    <Anchor href="https://www.google.com" target="_blank">
-                        <Tag
-                            bg="transparent"
-                            m={{ r: "1rem", b: "1rem" }}
-                            prefix={<Icon name="Home" color="brandprimary" size="21px" m={{ r: "0.5rem" }} />}
-                            cursor="pointer"
-                            textSize="title"
-                            textWeight="700"
-                            textColor="brandprimary"
-                        >
-                            Hem
-                        </Tag>
-                    </Anchor>
-                </li>
-                <li>
-                    <Anchor href="https://www.google.com" target="_blank">
-                        <Tag
-                            bg="transparent"
-                            m={{ r: "1rem", b: "1rem" }}
-                            prefix={<Icon name="Github" color="brandprimary" size="21px" m={{ r: "0.5rem" }} />}
-                            cursor="pointer"
-                            textSize="title"
-                            textWeight="700"
-                            textColor="brandprimary"
-                        >
-                            Projekt
-                        </Tag>
-                    </Anchor>
-                </li>
-                <li>
-                    <Anchor href="https://www.google.com" target="_blank">
-                        <Tag
-                            bg="transparent"
-                            m={{ r: "1rem", b: "1rem" }}
-                            prefix={<Icon name="Rename" color="brandprimary" size="21px" m={{ r: "0.5rem" }} />}
-                            cursor="pointer"
-                            textSize="title"
-                            textWeight="700"
-                            textColor="brandprimary"
-                        >
-                            CV
-                        </Tag>
-                    </Anchor>
-                </li>
-                <li>
-                    <Anchor href="https://www.google.com" target="_blank">
-                        <Tag
-                            bg="transparent"
-                            m={{ r: "1rem", b: "1rem" }}
-                            prefix={<Icon name="Message" color="brandprimary" size="21px" m={{ r: "0.5rem" }} />}
-                            cursor="pointer"
-                            textSize="title"
-                            textWeight="700"
-                            textColor="brandprimary"
-                        >
-                            Kommentera
-                        </Tag>
-                    </Anchor>
-                </li>
-            </ul>
+          <ul className="main-nav-list">
+            <li>
+            <Icon name="Home" color="brandprimary" size="21px" m={{ r: "0.5rem" }} />
+              <Link onClick={onClose} to="/">Hem</Link>
+            </li>
+            <li>
+                <Icon name="Github" color="brandprimary" size="21px" m={{ r: "0.5rem" }} />
+                <Link onClick={onClose} to="/projects">Projekt</Link>
+            </li>
+            <li>
+            <Icon name="Rename" color="brandprimary" size="21px" m={{ r: "0.5rem" }} />
+              <Link onClick={onClose} to="/contact">CV</Link>
+            </li>
+            <li>
+                <Icon name="Message" color="brandprimary" size="21px" m={{ r: "0.5rem" }} />
+              <Link onClick={onClose} to="/contact">Kontakt</Link>
+            </li>
+          </ul>
         </nav>
-        <Div m={{ t: "2rem"}}>
-            <Switch/>
+
+        <Div m={{ t: "3rem"}}>
+            <Switcher/>
         </Div>
     </SideDrawer>
   );

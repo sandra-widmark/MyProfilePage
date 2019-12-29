@@ -11,13 +11,11 @@ export default class ButtonSecondary extends React.Component {
                 bg="transparent"
                 rounded="circle"
                 textSize="subheader"
-                shadow="3"
                 textColor={this.props.color}
-                hoverShadow="4"
                 border="2px solid"
                 borderColor={this.props.color} 
-                hoverBg= "white"
-                hoverTextColor="brandprimary"
+                hoverBg= {this.props.hoverbg} 
+                hoverTextColor={this.props.hovercolor}
                 >       
                 {this.props.text}
             </Button>

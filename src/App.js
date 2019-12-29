@@ -7,6 +7,12 @@ import AboutSection from "./compositions/AboutSection";
 import CVSection from "./compositions/CVSection";
 import FormSection from "./compositions/FormSection";
 import Header from "./compositions/Header";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 const theme = {
   colors: {
@@ -20,26 +26,47 @@ const theme = {
 function App() { 
   return (
     <ThemeProvider theme={theme}>
-    <div className="App">     
+     <Router>
+      <div className="App">
       <Header/>
-      <div className="App-container">
-        <Div bg="brandprimary">
-          <IntroSection/>
-        </Div>
-        <Div bg="gray">
-          <AboutSection />
-        </Div>
-        <Div bg="gray">
-        <GithubSection />
-        </Div>
-        {/* <CVSection /> */}
-        <Div bg="">
-        <FormSection /> 
-        </Div>
-    </div>
-    </div>
+        <Switch>
+          <Route path="/projects">
+            <Projects />
+          </Route>
+          <Route path="/contact">
+            <Contact />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
     </ThemeProvider>
   );
+}
+
+
+function Home() {
+  return  <Div>
+  <Div bg="brandprimary">
+  <IntroSection/>
+</Div>
+<Div bg="gray">
+  <AboutSection />
+</Div></Div>
+}
+
+function Projects() {
+  return <Div bg="gray">
+  <GithubSection />
+  </Div>;
+}
+
+function Contact() {
+  return <Div bg="gray">
+  <FormSection />
+  </Div>;
 }
 
 export default App;
