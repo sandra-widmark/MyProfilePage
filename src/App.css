@@ -19,3 +19,8 @@
 .card-container div {
   flex-basis: 50%; 
 }
+
+.main-nav-list {
+  list-style-type: none;
+  padding-left: 0;
+}
