@@ -6,7 +6,7 @@ import ButtonSecondary from "../../components/ButtonSecondary"
 export default class IntroSection extends React.Component {
     render(){
         return (
-        <Container bg="brandprimary" d="flex" flexDir="column" align="center" justify="space-between" p={{ x: { xs: '2rem', md: '3rem' }, y: { xs: '2rem', md: '6rem' }}}>
+        <Container d="flex" flexDir="column" align="center" justify="space-between" p={{ x: { xs: '2rem', md: '3rem' }, y: { xs: '2rem', md: '6rem' }}}>
           <Row> 
             <Text 
                     tag="h1" 
@@ -20,8 +20,10 @@ export default class IntroSection extends React.Component {
           </Row>
           <row>
             <Div d="flex">
-              <ButtonPrimary icon="Rename" text="Se mina projekt"></ButtonPrimary>
-              <ButtonSecondary icon="Rename" text="Kontakta mig"></ButtonSecondary>
+              <Div m={{ r: "3rem"}}>
+                <ButtonPrimary text="Se mina projekt"></ButtonPrimary>
+              </Div>
+              <ButtonSecondary  color="white" text="Kontakta mig"></ButtonSecondary>
             </Div>
           </row>
         </Container>

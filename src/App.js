@@ -29,11 +29,19 @@ function App() {
           Sandra Widmark
           </Text>
           <div className="App-container">
-            <IntroSection/>
+            <Div bg="brandprimary">
+              <IntroSection/>
+            </Div>
+            <Div bg="gray">
+              <AboutSection />
+            </Div>
+            <Div bg="gray">
             <GithubSection />
-            <AboutSection />
-            <CVSection />
-            <FormSection />
+            </Div>
+            {/* <CVSection /> */}
+            <Div bg="">
+            <FormSection /> 
+            </Div>
         </div>
     </div>
     </ThemeProvider>
