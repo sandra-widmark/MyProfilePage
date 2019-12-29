@@ -6,6 +6,8 @@ import GithubSection from "./compositions/GithubSection";
 import AboutSection from "./compositions/AboutSection";
 import FormSection from "./compositions/FormSection";
 import Header from "./compositions/Header";
+import Footer from "./compositions/Footer";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -39,6 +41,7 @@ function App() {
             <Home />
           </Route>
         </Switch>
+        <Footer/>
       </div>
     </Router>
     </ThemeProvider>
