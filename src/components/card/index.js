@@ -1,5 +1,6 @@
 import React from "react";
 import { Div, Col, Text, Image, Button, Icon } from "atomize";
+import ButtonSecondary from "../../components/ButtonSecondary"
 
 
 export default class Card extends React.Component {
@@ -7,11 +8,11 @@ export default class Card extends React.Component {
         return (
             <Col>
                 <Div
-                        bg="white"
-                        p="1rem"
-                        rounded="md"
-                        shadow="3"
-                        m="1rem"
+                    bg="white"
+                    p="1rem"
+                    rounded="md"
+                    shadow="3"
+                    m="1rem"
                     >
                     <Text 
                     tag="h2" 
@@ -32,24 +33,7 @@ export default class Card extends React.Component {
                     </Text>
                     
                     <Div d="flex">
-                    <Button
-                        prefix={
-                        <Icon
-                            name="Github"
-                            size="20px"
-                            color="white"
-                            m={{ r: "0.5rem" }}
-                        />
-                        }
-                        bg="warning700"
-                        hoverBg="warning800"
-                        rounded="circle"
-                        p={{ r: "1.5rem", l: "1rem" }}
-                        shadow="3"
-                        hoverShadow="4"
-                        >       
-                        Se projektet
-                    </Button>
+                    <ButtonSecondary icon="Github" text="Se projektet"></ButtonSecondary>
                     </Div>
                 </Div>
             </Col>

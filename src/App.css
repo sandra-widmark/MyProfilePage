@@ -1,13 +1,21 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,600,700,900&display=swap');
 
 .App {
   margin: 0;
-  font-family: 'Noto Sans TC', sans-serif;
+  font-family: 'Nunito', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 
 .App-container {
-  background-color: rgb(89, 103, 128);
+ 
+}
+
+.profile-picture {
+  max-width: 100%; 
+}
+
+.contact-form {
+  max-width: 300px; 
 }
