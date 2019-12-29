@@ -1,6 +1,7 @@
 import React from "react";
 import { ThemeProvider, Div, Anchor, Tag,Col, SideDrawer, Row, Container, Text, Image, Button, Icon } from "atomize";
 import Switcher from "../../components/switch"
+import Pdf from '../Menu/Cv_sw.pdf';
 import {
     BrowserRouter as Router,
     Switch,
@@ -25,7 +26,7 @@ const BasicSideDrawer = ({ isOpen, onClose }) => {
             </li>
             <li>
             <Icon name="Rename" color="brandprimary" size="21px" m={{ r: "0.5rem" }} />
-              <Link onClick={onClose} to="/contact">CV</Link>
+            <a href = {Pdf} target = "_blank">CV</a>
             </li>
             <li>
                 <Icon name="Message" color="brandprimary" size="21px" m={{ r: "0.5rem" }} />

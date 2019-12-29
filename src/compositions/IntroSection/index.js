@@ -2,8 +2,17 @@ import React from "react";
 import { ThemeProvider, Div, Col, Row, Container, Text, Image, Button, Icon } from "atomize";
 import ButtonPrimary from "../../components/ButtonPrimary"
 import ButtonSecondary from "../../components/ButtonSecondary"
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+  Link
+} from "react-router-dom";
+
 
 export default class IntroSection extends React.Component {
+
     render(){
         return (
         <Container d="flex" flexDir="column" align="center" justify="space-between" p={{ x: { xs: '2rem', md: '3rem' }, y: { xs: '2rem', md: '6rem' }}}>

@@ -4,7 +4,6 @@ import { ThemeProvider, Div, Col, Row, Container, Text, Image, Button, Icon } fr
 import IntroSection from "./compositions/IntroSection";
 import GithubSection from "./compositions/GithubSection";
 import AboutSection from "./compositions/AboutSection";
-import CVSection from "./compositions/CVSection";
 import FormSection from "./compositions/FormSection";
 import Header from "./compositions/Header";
 import {
