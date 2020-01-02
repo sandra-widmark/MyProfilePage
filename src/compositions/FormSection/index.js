@@ -42,11 +42,11 @@ export default class FormSection extends React.Component {
                     >
                   Skriv en kommentar
                 </Text>
-                  <Text p={{ t: "0.5rem", b: "0.5rem" }} textSize="subheader">
+                  <Text textColor="darkgray" p={{ t: "0.5rem", b: "0.5rem" }} textSize="subheader">
                   Namn
                 </Text>
                 <TitleInput/>
-                <Text p={{ t: "0.5rem", b: "0.5rem" }} textSize="subheader">
+                <Text textColor="darkgray" p={{ t: "0.5rem", b: "0.5rem" }} textSize="subheader">
                   Kommentar
                 </Text>
                 <DescriptionInput/>
@@ -71,10 +71,10 @@ export default class FormSection extends React.Component {
                   >
                 Kommentarer
               </Text>
-                <Text p={{ t: "0.5rem", b: "0.5rem" }} textSize="subheader" textWeight="700">
+                <Text textColor="darkgray" p={{ t: "0.5rem", b: "0.5rem" }} textSize="subheader" textWeight="700">
                 Namn
               </Text>
-              <Text p={{ b: "0.5rem" }} textSize="subheader">
+              <Text textColor="darkgray" p={{ b: "0.5rem" }} textSize="subheader">
                 Kommentar lorem ipsum dolor sit amet
               </Text>
               <Div d="flex" m={{ b: "4rem" }}>

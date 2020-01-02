@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from 'react';
 import { ThemeProvider, Div, Anchor, Tag,Col, SideDrawer, Row, Container, Text, Image, Button, Icon } from "atomize";
-import Switcher from "../../components/switch"
 import Pdf from '../Menu/Cv_sw.pdf';
+
 import {
     BrowserRouter as Router,
     Switch,
@@ -11,8 +11,19 @@ import {
 
 
 const BasicSideDrawer = ({ isOpen, onClose }) => {
+
+  const [theme, setTheme] = useState('light');
+
+const toggleTheme = () => {
+  if(theme === 'light'){
+    setTheme('dark');
+  } else {
+    setTheme('light'); 
+  }
+}
+
   return (
-    <SideDrawer isOpen={isOpen} onClose={onClose} p={{y:"3rem", l:"2rem"}}>
+    <SideDrawer isOpen={isOpen} onClose={onClose} textColor="brandprimary" p={{y:"3rem", l:"2rem"}}>
 
         <nav>
           <ul className="main-nav-list">
@@ -34,10 +45,6 @@ const BasicSideDrawer = ({ isOpen, onClose }) => {
             </li>
           </ul>
         </nav>
-
-        <Div m={{ t: "3rem"}}>
-            <Switcher/>
-        </Div>
     </SideDrawer>
   );
 };

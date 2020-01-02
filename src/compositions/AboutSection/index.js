@@ -22,7 +22,7 @@ export default class AboutSection extends React.Component {
               <Text 
                 tag="p" 
                 textSize="title" 
-                textColor="black"
+                textColor="darkgray"
                 >
                 Jag är utbildad inom inom frontend med fokus på JavaScript och har även en kandidatexamen i grafisk design och kommunikation. Jag drivs mycket av att få tänka både logiskt och estetiskt i min roll som frontendutvecklare, och även att kunna bidra till något som skapar värde för andra människor eller världen i stort. 
                 </Text>
