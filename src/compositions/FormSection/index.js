@@ -1,87 +1,71 @@
 import React from "react";
 import { ThemeProvider, Div, Col, Row, Container, Text, Image, Button, Icon, Input, Textarea } from "atomize";
-import Paragraph from "../../components/Paragraph"
-import Subheader from "../../components/Subheader"
 import ButtonSecondary from "../../components/ButtonSecondary"
 
-const TitleInput = () => {
-  return (
-    <Input placeholder="" />
-  );
-}
-
-const DescriptionInput = () => {
-  return (
-    <Textarea placeholder="" />
-  );
-}
-
-const WeightInput = () => {
-  return (
-    <Input placeholder="Vikt" />
-  );
-}
-
 export default class FormSection extends React.Component {
-    render(){
-        return (
+  constructor(props) {
+    super(props);
+    this.state = {
+      value1: '',
+      value2: ''
+  };
+
+    this.handleChangeInput1 = this.handleChangeInput1.bind(this);
+    this.handleChangeInput2 = this.handleChangeInput2.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChangeInput1(event) {
+    this.setState({value1: event.target.value });
+  }
+
+  handleChangeInput2(event) {
+    this.setState({value2: event.target.value});
+  }
+
+
+  handleSubmit(event) {
+    alert('A name was submitted: ' + this.state.value);
+    event.preventDefault();
+  }
+
+  render() {
+    return (
         <Container d="flex" justify="space-around"  p={{ x: { xs: '2rem', md: '3rem' }, y: { xs: '2rem', md: '3rem' }}}>
             <Div
-                      bg="white"
-                      p="2.5rem"
-                      rounded="xl"
-                      shadow="3"
-                      m="1rem"
-                      >
+              bg="white"
+              p="2.5rem"
+              rounded="xl"
+              shadow="3"
+              m="1rem"
+              >
 
-                    <Text 
-                    tag="h2" 
-                    textSize="display1" 
-                    textWeight="900"
-                    textColor="darkgray"
-                    >
-                  Skriv en kommentar
-                </Text>
-                  <Text textColor="darkgray" p={{ t: "0.5rem", b: "0.5rem" }} textSize="subheader">
-                  Namn
-                </Text>
-                <TitleInput/>
-                <Text textColor="darkgray" p={{ t: "0.5rem", b: "0.5rem" }} textSize="subheader">
-                  Kommentar
-                </Text>
-                <DescriptionInput/>
-                <Div d="flex" m={{ b: "4rem" }}>
-                </Div>
-              <Div d="flex" justify="flex-end">
-                <ButtonSecondary hoverbg="brandprimary" hovercolor="white" color="brandprimary" text="Kommentera"></ButtonSecondary>
-              </Div>
+                <Text 
+                tag="h2" 
+                textSize="display1" 
+                textWeight="900"
+                textColor="darkgray"
+                >
+              Välj färgtema för webbplatsen
+              </Text>
+
+                <form onSubmit={this.handleSubmit}>
+                  <Div m={{ r: "1rem", y: "1rem"}}>
+                    <label for="color1">Färg 1</label>
+                    <input type="color" id="color1" name="color1" value={this.state.value1} onChange={this.handleChangeInput1} />
+                  </Div>
+                  <Div m={{ r: "1rem", y: "1rem"}}>
+                    <label for="color2">Färg 2</label>
+                    <input type="color" id="color2" name="color2" value={this.state.value2} onChange={this.handleChangeInput2} />
+                  </Div>
+                  <Div d="flex" justify="flex-end" m={{ t: "2rem"}}>
+                    <ButtonSecondary hoverbg="brandprimary" hovercolor="white" color="brandprimary" text="Välj färgtema"></ButtonSecondary>
+                  </Div>
+                </form>
+                
                       
             </Div>
-          <Div
-                    bg="transparent"
-                    p="2.5rem"
-                    >
-
-                  <Text 
-                  tag="h2" 
-                  textSize="display1" 
-                  textWeight="900"
-                  textColor="darkgray"
-                  m={{ y: "1.5rem" }}
-                  >
-                Kommentarer
-              </Text>
-                <Text textColor="darkgray" p={{ t: "0.5rem", b: "0.5rem" }} textSize="subheader" textWeight="700">
-                Namn
-              </Text>
-              <Text textColor="darkgray" p={{ b: "0.5rem" }} textSize="subheader">
-                Kommentar lorem ipsum dolor sit amet
-              </Text>
-              <Div d="flex" m={{ b: "4rem" }}>
-              </Div>    
-          </Div>
         </Container>
-        );
-    }
+    );
+  }
 }
-
