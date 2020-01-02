@@ -30,9 +30,9 @@ export default class IntroSection extends React.Component {
           <row>
             <Div d="flex">
               <Div m={{ r: "3rem"}}>
-                <ButtonPrimary text="Se mina projekt"></ButtonPrimary>
+                <ButtonPrimary text="Se mina projekt" link="/projects"></ButtonPrimary>
               </Div>
-              <ButtonSecondary hoverbg="brandprimary" hovercolor="white" color="brandprimary" text="Kontakta mig"></ButtonSecondary>
+              <ButtonSecondary hoverbg="brandprimary" hovercolor="white" color="brandprimary" text="Kontakta mig" link="/contact"></ButtonSecondary>
             </Div>
           </row>
         </Container>

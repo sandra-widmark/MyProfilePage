@@ -9,10 +9,11 @@ export default class Card extends React.Component {
             <Col>
                 <Div
                     bg="white"
-                    p="2.5rem"
+                    p={{ y: '2rem', x:'2.5rem'}}
                     rounded="xl"
                     shadow="3"
                     m={{ y: '1rem', r:"1rem"}}
+                    minH="90%"
                     >
                     <Text 
                     tag="h2" 
@@ -20,7 +21,7 @@ export default class Card extends React.Component {
                     m={{ x: '1rem', b: '0,5rem'}}
                     textColor="brandprimary"
                     >
-                    {this.props.name}
+                    {this.props.title}
                     </Text>
 
                     <Text 
@@ -33,7 +34,7 @@ export default class Card extends React.Component {
                     </Text>
                     
                     <Div d="flex" justify="flex-end">
-                    <ButtonPrimary text="Se projektet"></ButtonPrimary>
+                    <ButtonPrimary text="Se projektet" link={this.props.link}></ButtonPrimary>
                     </Div>
                 </Div>
             </Col>

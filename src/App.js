@@ -51,7 +51,7 @@ const toggleTheme = () => {
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
      <Router>
-      <div className="App" bg="white">
+      <div className="App">
       <Header/>
       <Toggle theme={theme} toggleTheme={toggleTheme} />
         <Switch>
