@@ -5,10 +5,10 @@ import IntroSection from "./compositions/IntroSection";
 import GithubSection from "./compositions/GithubSection";
 import AboutSection from "./compositions/AboutSection";
 import FormSection from "./compositions/FormSection";
+import {ToggleTheme} from "./compositions/FormSection";
 import Header from "./compositions/Header";
 import Footer from "./compositions/Footer";
 import Toggle from "./components/Toggle";
-
 import {
   BrowserRouter as Router,
   Switch,
@@ -16,7 +16,8 @@ import {
   Link
 } from "react-router-dom";
 
-const darkTheme = {
+
+let darkTheme = {
   colors: {
     brandprimary: "#ffffff",
     brandsecondary: "#FFC107",
@@ -26,7 +27,7 @@ const darkTheme = {
   }
 };
 
-const lightTheme = {
+let lightTheme = {
   colors: {
     brandprimary: "#6400E4",
     brandsecondary: "#FFC107",
@@ -36,24 +37,31 @@ const lightTheme = {
   }
 };
 
+
 function App() { 
 
-const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('light');
 
-const toggleTheme = () => {
-  if(theme === 'light'){
-    setTheme('dark');
-  } else {
-    setTheme('light'); 
+  const toggleTheme = () => {
+    if(theme === 'light'){
+      setTheme('dark');
+    } else {
+      setTheme('light'); 
+    }
   }
-}
 
+  const setUserTheme = () => {
+      setTheme('light');
+      //return defaultTheme = colorTheme; 
+  }
+  
   return (
-    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme }> 
      <Router>
       <div className="App">
       <Header/>
       <Toggle theme={theme} toggleTheme={toggleTheme} />
+      <ToggleTheme setUserTheme={setUserTheme} />
         <Switch>
           <Route path="/projects">
             <Projects />
@@ -91,7 +99,7 @@ function Projects() {
 
 function Contact() {
   return <Div bg="gray">
-  <FormSection />
+  <FormSection/>
   </Div>;
 }
 

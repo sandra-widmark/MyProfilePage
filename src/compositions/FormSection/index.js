@@ -1,14 +1,31 @@
-import React from "react";
+import React, { useState, prevState } from 'react';
 import { ThemeProvider, Div, Col, Row, Container, Text, Image, Button, Icon, Input, Textarea } from "atomize";
 import ButtonSecondary from "../../components/ButtonSecondary"
+
+export const ToggleTheme = ({ setUserTheme }) => {
+  return (
+       <button
+            onClick={setUserTheme}
+            align="center"
+            textWeight="700"
+            textSize="subheader"
+            textColor="darkgray"
+            bg="white"
+            p={{ y: "1rem", x: "2rem" }}
+            >
+            Uppdatera färgtema
+          </button>
+  );
+};
 
 export default class FormSection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       value1: '',
-      value2: ''
-  };
+      value2: '',
+      colorTheme: ''
+    };
 
     this.handleChangeInput1 = this.handleChangeInput1.bind(this);
     this.handleChangeInput2 = this.handleChangeInput2.bind(this);
@@ -23,13 +40,29 @@ export default class FormSection extends React.Component {
     this.setState({value2: event.target.value});
   }
 
-
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
+
+    let colorTheme = {
+      colors: {
+        brandprimary: this.state.value1,
+        brandsecondary: this.state.value1,
+        gray: this.state.value2,
+        darkgray: this.state.value1,
+        white: this.state.value2
+      }
+    };
+
+    this.setState({
+        colorTheme : colorTheme
+    })
+
+    console.log(this.state.value1,this.state.value2, this.state.colorTheme);
+
     event.preventDefault();
   }
 
   render() {
+    
     return (
         <Container d="flex" justify="space-around"  p={{ x: { xs: '2rem', md: '3rem' }, y: { xs: '2rem', md: '3rem' }}}>
             <Div

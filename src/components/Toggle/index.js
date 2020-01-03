@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Switch, Label, Div, Button, Modal, Icon, Text, Input, Textarea } from "atomize";
 
-
 const Toggle = ({ toggleTheme }) => {
 
     const selected = true;
