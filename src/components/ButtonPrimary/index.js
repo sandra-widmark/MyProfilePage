@@ -15,6 +15,7 @@ export default class ButtonPrimary extends React.Component {
                     shadow="3"
                     textColor="black"
                     hoverShadow="4"
+                    onClick={this.props.click} 
                     hoverBg="warning700"
                     minW={{ xs: '100%', md: 'auto' }}
                     >       

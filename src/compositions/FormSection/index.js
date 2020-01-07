@@ -1,22 +1,7 @@
 import React from 'react';
 import { Div, Container, Text } from "atomize";
 import ButtonSecondary from "../../components/ButtonSecondary"
-
-export const ToggleTheme = ({ toggleUserTheme }) => {
-  return (
-       <button
-            onClick={toggleUserTheme}
-            align="center"
-            textWeight="700"
-            textSize="subheader"
-            textColor="darkgray"
-            bg="white"
-            p={{ y: "1rem", x: "2rem" }}
-            >
-            Uppdatera färgtema
-          </button>
-  );
-};
+import ToggleColor from "../../components/ToggleColor";
 
 export default class FormSection extends React.Component {
   constructor(props) {
@@ -64,13 +49,12 @@ export default class FormSection extends React.Component {
   render() {
     
     return (
-        <Container d="flex" justify="space-around"  p={{ x: { xs: '2rem', md: '3rem' }, y: { xs: '2rem', md: '3rem' }}}>
+        <Container d="flex" justify="space-around"  p={{ x: { xs: '1.5rem', md: '3rem' }, y: { xs: '1.5rem', md: '3rem' }}}>
             <Div
               bg="white"
               p="2.5rem"
               rounded="xl"
               shadow="3"
-              m="1rem"
               >
 
                 <Text 
@@ -94,8 +78,6 @@ export default class FormSection extends React.Component {
                     <ButtonSecondary hoverbg="brandprimary" hovercolor="white" color="brandprimary" text="Välj färgtema"></ButtonSecondary>
                   </Div>
                 </form>
-                
-                      
             </Div>
         </Container>
     );

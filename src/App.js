@@ -8,6 +8,7 @@ import FormSection from "./compositions/FormSection";
 import Header from "./compositions/Header";
 import Footer from "./compositions/Footer";
 import Toggle from "./components/Toggle";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -25,7 +26,7 @@ let darkTheme = {
   }
 };
 
-let lightTheme = {
+export let lightTheme = {
   colors: {
     brandprimary: "#6400E4",
     brandsecondary: "#FFC107",
@@ -34,53 +35,18 @@ let lightTheme = {
     white: "#ffffff"
   }
 };
-
-
-let userTheme = {
-  colors: {
-    brandprimary: "#6400E4",
-    brandsecondary: "#6400E4",
-    gray: "#6400E4",
-    darkgray: "#6400E4",
-    white: "#000"
-  }
-};
-
 
 function App() { 
 
-  const [theme, setUserTheme] = useState('light');
-
+  const [theme, setTheme] = useState('light');
 
   const toggleTheme = () => {
-
-    lightTheme = {
-  colors: {
-    brandprimary: "#6400E4",
-    brandsecondary: "#FFC107",
-    gray: "#F1F3FE",
-    darkgray: "#15141F",
-    white: "#ffffff"
-  }
-};
-
     if(theme === 'light'){
-      setUserTheme('dark');
+      setTheme('dark');
     } else {
-      setUserTheme('light'); 
+      setTheme('light'); 
     }
   }
-  
-  const toggleUserTheme = () => {
-    lightTheme = userTheme; 
-
-    if(theme === 'light'){
-      setUserTheme('dark');
-    } else {
-      setUserTheme('light'); 
-    }
-  }
-
 
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme }> 
@@ -88,14 +54,13 @@ function App() {
       <div className="App">
       <Header/>
       <Toggle theme={theme} toggleTheme={toggleTheme} />
-      <Toggle theme={theme} toggleTheme={toggleUserTheme} />
         <Switch>
           <Route path="/projects">
             <Projects />
           </Route>
           <Route path="/">
             <Home />
-          </Route>
+          </Route> 
         </Switch>
         <Footer/>
       </div>
@@ -108,13 +73,13 @@ function App() {
 function Home() {
   return  <Div>
   <Div bg="gray">
-  <IntroSection/>
-</Div>
-<Div bg="white">
-  <AboutSection />
-</Div>
-<Div bg="gray">
-  <FormSection/>
+    <IntroSection/>
+  </Div>
+  <Div bg="white">
+    <AboutSection />
+  </Div>
+  <Div bg="gray">
+    <FormSection/>
   </Div>
 </Div>
 }
