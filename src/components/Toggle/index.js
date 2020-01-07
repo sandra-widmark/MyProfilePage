@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Switch, Label, Div, Button, Modal, Icon, Text, Input, Textarea } from "atomize";
+import { Switch, Label } from "atomize";
 
 const Toggle = ({ toggleTheme }) => {
 
@@ -21,24 +21,24 @@ const Toggle = ({ toggleTheme }) => {
       }
 
     return (
-         <Label
-              onClick={changeTheme}
-              align="center"
-              textWeight="700"
-              textSize="subheader"
-              textColor="darkgray"
-              bg="white"
-              p={{ y: "1rem", x: "2rem" }}
-              >
-              <Switch
+      <Label
+          onClick={changeTheme}
+          align="center"
+          textWeight="700"
+          textSize="subheader"
+          textColor="darkgray"
+          bg="white"
+          p={{ x: { xs: '1.5rem', md: '2rem' }, y: { xs: '1rem', md: '1rem' }}}
+          >
+          <Switch
 
-              checked={selectedSwitchValue === 'false' ? selected : notSelected}
-                inactiveColor="gray600"
-                activeColor="brandprimary"
-                activeShadow="5"
-              />
-              Ljust/mörkt tema
-            </Label>
+          checked={selectedSwitchValue === 'false' ? selected : notSelected}
+            inactiveColor="gray600"
+            activeColor="brandprimary"
+            activeShadow="5"
+          />
+          Ljust/mörkt tema
+        </Label>
     );
   };
 

@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
 import './App.css';
-import { ThemeProvider, Div, Col, Row, Container, Text, Image, Button, Icon } from "atomize";
+import { ThemeProvider, Div} from "atomize";
 import IntroSection from "./compositions/IntroSection";
 import GithubSection from "./compositions/GithubSection";
 import AboutSection from "./compositions/AboutSection";
 import FormSection from "./compositions/FormSection";
-import {ToggleTheme} from "./compositions/FormSection";
 import Header from "./compositions/Header";
 import Footer from "./compositions/Footer";
 import Toggle from "./components/Toggle";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 
@@ -38,36 +36,62 @@ let lightTheme = {
 };
 
 
+let userTheme = {
+  colors: {
+    brandprimary: "#6400E4",
+    brandsecondary: "#6400E4",
+    gray: "#6400E4",
+    darkgray: "#6400E4",
+    white: "#000"
+  }
+};
+
+
 function App() { 
 
-  const [theme, setTheme] = useState('light');
+  const [theme, setUserTheme] = useState('light');
+
 
   const toggleTheme = () => {
+
+    lightTheme = {
+  colors: {
+    brandprimary: "#6400E4",
+    brandsecondary: "#FFC107",
+    gray: "#F1F3FE",
+    darkgray: "#15141F",
+    white: "#ffffff"
+  }
+};
+
     if(theme === 'light'){
-      setTheme('dark');
+      setUserTheme('dark');
     } else {
-      setTheme('light'); 
+      setUserTheme('light'); 
+    }
+  }
+  
+  const toggleUserTheme = () => {
+    lightTheme = userTheme; 
+
+    if(theme === 'light'){
+      setUserTheme('dark');
+    } else {
+      setUserTheme('light'); 
     }
   }
 
-  const setUserTheme = () => {
-      setTheme('light');
-      //return defaultTheme = colorTheme; 
-  }
-  
+
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme }> 
      <Router>
       <div className="App">
       <Header/>
       <Toggle theme={theme} toggleTheme={toggleTheme} />
-      <ToggleTheme setUserTheme={setUserTheme} />
+      <Toggle theme={theme} toggleTheme={toggleUserTheme} />
         <Switch>
           <Route path="/projects">
             <Projects />
-          </Route>
-          <Route path="/contact">
-            <Contact />
           </Route>
           <Route path="/">
             <Home />
@@ -88,21 +112,18 @@ function Home() {
 </Div>
 <Div bg="white">
   <AboutSection />
-</Div></Div>
+</Div>
+<Div bg="gray">
+  <FormSection/>
+  </Div>
+</Div>
 }
 
 function Projects() {
   return <Div bg="gray">
   <GithubSection />
-  </Div>;
+  </Div>
 }
-
-function Contact() {
-  return <Div bg="gray">
-  <FormSection/>
-  </Div>;
-}
-
 export default App;
 
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Div, Col, Text, Image, Button, Icon } from "atomize";
+import { Div, Col, Text } from "atomize";
 import ButtonPrimary from "../../components/ButtonPrimary"
 
 
@@ -9,16 +9,15 @@ export default class Card extends React.Component {
             <Col>
                 <Div
                     bg="white"
-                    p={{ y: '2rem', x:'2.5rem'}}
+                    p={{ y: { xs: '1rem', md: '2rem' }, x: { xs: '1rem', md: '2rem' }}}
+                    m={{ y: { xs: '0.5rem', md: '0.5rem' }}}
                     rounded="xl"
                     shadow="3"
-                    m={{ y: '1rem', r:"1rem"}}
                     minH="90%"
                     >
                     <Text 
                     tag="h2" 
-                    textSize="display1" 
-                    m={{ x: '1rem', b: '0,5rem'}}
+                    textSize={{ xs: "title", md: "display1" }}
                     textColor="brandprimary"
                     >
                     {this.props.title}
@@ -27,7 +26,7 @@ export default class Card extends React.Component {
                     <Text 
                     tag="p" 
                     textSize="title" 
-                    m={{ x: '1rem', b: '1.5rem' }}
+                    m={{ b: '1.5rem' }}
                     textColor="darkgray"
                     >
                     {this.props.description}

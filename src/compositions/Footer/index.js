@@ -1,6 +1,5 @@
 import React from "react";
-import { ThemeProvider, Div, Col, Row, Container, Text, Image, Button, Icon } from "atomize";
-import Drawer from "../Menu";
+import { Div, Text } from "atomize";
 
 export default class Footer extends React.Component {
     render(){

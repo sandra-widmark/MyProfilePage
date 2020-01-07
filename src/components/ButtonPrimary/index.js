@@ -1,5 +1,5 @@
 import React from "react";
-import { Div, Col, Text, Image, Anchor, Button, Icon } from "atomize";
+import { Anchor, Button } from "atomize";
 
 
 export default class ButtonPrimary extends React.Component {
@@ -11,11 +11,12 @@ export default class ButtonPrimary extends React.Component {
                     p={{ x: "1.75rem" }}
                     bg="brandsecondary"
                     rounded="circle"
-                    textSize="subheader"
+                    textSize={{ xs: "body", md: "subheader" }}
                     shadow="3"
                     textColor="black"
                     hoverShadow="4"
                     hoverBg="warning700"
+                    minW={{ xs: '100%', md: 'auto' }}
                     >       
                     {this.props.text}
                 </Button>

@@ -1,26 +1,13 @@
-import React, { useState } from 'react';
-import { ThemeProvider, Div, Anchor, Tag,Col, SideDrawer, Row, Container, Text, Image, Button, Icon } from "atomize";
+import React from 'react';
+import { SideDrawer, Button, Icon } from "atomize";
 import Pdf from '../Menu/Cv_sw.pdf';
 
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
     Link
   } from "react-router-dom";
 
 
 const BasicSideDrawer = ({ isOpen, onClose }) => {
-
-  const [theme, setTheme] = useState('light');
-
-const toggleTheme = () => {
-  if(theme === 'light'){
-    setTheme('dark');
-  } else {
-    setTheme('light'); 
-  }
-}
 
   return (
     <SideDrawer isOpen={isOpen} onClose={onClose} textColor="brandprimary" p={{y:"3rem", l:"2rem"}}>
@@ -37,7 +24,7 @@ const toggleTheme = () => {
             </li>
             <li>
             <Icon name="Rename" color="brandprimary" size="21px" m={{ r: "0.5rem" }} />
-            <a href = {Pdf} target = "_blank">CV</a>
+            <a href = {Pdf} target ="_blank" rel="noopener">CV</a>
             </li>
             <li>
                 <Icon name="Message" color="brandprimary" size="21px" m={{ r: "0.5rem" }} />
@@ -65,10 +52,10 @@ class Drawer extends React.Component {
       <>
         <Button
           bg="transparent"
-          m={{ r: "0.5rem" }}
+          p="0"
           onClick={() => this.setState({ showSideDrawer: true })}
         >
-        <Icon name="Menu" size="40px" color="brandprimary" />
+        <Icon name="Menu" size={{ xs: "30px", md: "40px" }} color="brandprimary" />
         </Button>
         <BasicSideDrawer
           isOpen={showSideDrawer}

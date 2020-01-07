@@ -1,11 +1,11 @@
-import React, { useState, prevState } from 'react';
-import { ThemeProvider, Div, Col, Row, Container, Text, Image, Button, Icon, Input, Textarea } from "atomize";
+import React from 'react';
+import { Div, Container, Text } from "atomize";
 import ButtonSecondary from "../../components/ButtonSecondary"
 
-export const ToggleTheme = ({ setUserTheme }) => {
+export const ToggleTheme = ({ toggleUserTheme }) => {
   return (
        <button
-            onClick={setUserTheme}
+            onClick={toggleUserTheme}
             align="center"
             textWeight="700"
             textSize="subheader"
@@ -74,8 +74,7 @@ export default class FormSection extends React.Component {
               >
 
                 <Text 
-                tag="h2" 
-                textSize="display1" 
+                textSize={{ xs: "title", md: "display1" }}
                 textWeight="900"
                 textColor="darkgray"
                 >
@@ -84,14 +83,14 @@ export default class FormSection extends React.Component {
 
                 <form onSubmit={this.handleSubmit}>
                   <Div m={{ r: "1rem", y: "1rem"}}>
-                    <label for="color1">Färg 1</label>
+                    <label htmlFor="color1">Färg 1</label>
                     <input type="color" id="color1" name="color1" value={this.state.value1} onChange={this.handleChangeInput1} />
                   </Div>
                   <Div m={{ r: "1rem", y: "1rem"}}>
-                    <label for="color2">Färg 2</label>
+                    <label htmlFor="color2">Färg 2</label>
                     <input type="color" id="color2" name="color2" value={this.state.value2} onChange={this.handleChangeInput2} />
                   </Div>
-                  <Div d="flex" justify="flex-end" m={{ t: "2rem"}}>
+                  <Div d="flex" flexDir={{ xs: 'column', md: 'row' }} justify="flex-end" m={{ t: "2rem"}}>
                     <ButtonSecondary hoverbg="brandprimary" hovercolor="white" color="brandprimary" text="Välj färgtema"></ButtonSecondary>
                   </Div>
                 </form>
