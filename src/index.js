@@ -17,7 +17,7 @@ const engine = new Styletron();
 ReactDOM.render(
 <StyletronProvider value={engine} debug={debug} debugAfterHydration>
         <StyleReset />
-        <App />
+          <App />
   </StyletronProvider>, document.getElementById('root'));
 
 serviceWorker.unregister();

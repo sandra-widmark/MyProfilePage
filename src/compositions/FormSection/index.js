@@ -1,7 +1,6 @@
 import React from 'react';
 import { Div, Container, Text } from "atomize";
 import ButtonSecondary from "../../components/ButtonSecondary"
-import ToggleColor from "../../components/ToggleColor";
 
 export default class FormSection extends React.Component {
   constructor(props) {
@@ -9,7 +8,6 @@ export default class FormSection extends React.Component {
     this.state = {
       value1: '',
       value2: '',
-      colorTheme: ''
     };
 
     this.handleChangeInput1 = this.handleChangeInput1.bind(this);
@@ -27,21 +25,7 @@ export default class FormSection extends React.Component {
 
   handleSubmit(event) {
 
-    let colorTheme = {
-      colors: {
-        brandprimary: this.state.value1,
-        brandsecondary: this.state.value1,
-        gray: this.state.value2,
-        darkgray: this.state.value1,
-        white: this.state.value2
-      }
-    };
-
-    this.setState({
-        colorTheme : colorTheme
-    })
-
-    console.log(this.state.value1,this.state.value2, this.state.colorTheme);
+    console.log(this.state.value1,this.state.value2);
 
     event.preventDefault();
   }

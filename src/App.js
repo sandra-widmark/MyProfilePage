@@ -8,6 +8,7 @@ import FormSection from "./compositions/FormSection";
 import Header from "./compositions/Header";
 import Footer from "./compositions/Footer";
 import Toggle from "./components/Toggle";
+import ToggleColor from "./components/ToggleColor";
 
 import {
   BrowserRouter as Router,
@@ -26,7 +27,7 @@ let darkTheme = {
   }
 };
 
-export let lightTheme = {
+let lightTheme = {
   colors: {
     brandprimary: "#6400E4",
     brandsecondary: "#FFC107",
@@ -36,24 +37,44 @@ export let lightTheme = {
   }
 };
 
+let userTheme = {
+  colors: {
+    brandprimary: "#6400E4",
+    brandsecondary: "#6400E4",
+    gray: "#F1F3FE",
+    darkgray: "#6400E4",
+    white: "#6400E4"
+  }
+};
+
 function App() { 
 
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState(lightTheme);
 
   const toggleTheme = () => {
-    if(theme === 'light'){
-      setTheme('dark');
+    if(theme === lightTheme){
+      setTheme(darkTheme);
     } else {
-      setTheme('light'); 
+      setTheme(lightTheme); 
+    }
+  }
+
+  const toggleColorTheme = () => {
+    if(theme === lightTheme){
+      setTheme(userTheme);
+    } else {
+      setTheme(userTheme); 
     }
   }
 
   return (
-    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme }> 
+    //hur kan jag komma åt themprovidern i kompnenter? 
+    <ThemeProvider theme={theme}> 
      <Router>
       <div className="App">
       <Header/>
       <Toggle theme={theme} toggleTheme={toggleTheme} />
+      <ToggleColor theme={theme} toggleColorTheme={toggleColorTheme} />
         <Switch>
           <Route path="/projects">
             <Projects />
