@@ -95,7 +95,7 @@ const UserColorInput = ({setUserTheme}) => {
       userTheme = {
         colors: {
           brandprimary: this.state.value1,
-          brandsecondary: "#6400E4",
+          brandsecondary: "#FFC107",
           gray: this.state.value2,
           darkgray: "#15141F",
           white: "#fff"
