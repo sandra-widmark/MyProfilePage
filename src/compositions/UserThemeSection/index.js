@@ -4,7 +4,7 @@ import ButtonSecondary from "../../components/ButtonSecondary"
 
 export let userTheme = {}; 
 
-const ToggleColor = ({setUserTheme}) => {
+const UserColorInput = ({setUserTheme}) => {
 
     return (
       
@@ -30,7 +30,7 @@ const ToggleColor = ({setUserTheme}) => {
   };
 
 
-  export default ToggleColor;
+  export default UserColorInput;
 
   
   export class FormSection extends React.Component {
