@@ -33,8 +33,8 @@ const Toggle = ({ toggleTheme }) => {
           <Switch
 
           checked={selectedSwitchValue === 'false' ? selected : notSelected}
-            inactiveColor="brandsecondary"
-            activeColor="darkgray"
+            inactiveColor="#FFC107"
+            activeColor="#bdc3c7"
             activeShadow="5"
           />
           Ljust/mörkt tema

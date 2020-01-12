@@ -7,7 +7,6 @@ export let userTheme = {};
 const UserColorInput = ({setUserTheme}) => {
 
     return (
-      
       <Container d="flex" justify="space-around"  p={{ x: { xs: '1.5rem', md: '3rem' }, y: { xs: '1.5rem', md: '3rem' }}}>
           <Div
             bg="white"
@@ -29,10 +28,8 @@ const UserColorInput = ({setUserTheme}) => {
     );
   };
 
-
   export default UserColorInput;
 
-  
   export class FormSection extends React.Component {
 
     constructor(props) {
@@ -40,6 +37,9 @@ const UserColorInput = ({setUserTheme}) => {
       this.state = {
         value1: '',
         value2: '',
+        value1Valid: false,
+        value2Valid: false,
+        formValid: false
       };
   
       this.handleChangeInput1 = this.handleChangeInput1.bind(this);
@@ -48,11 +48,42 @@ const UserColorInput = ({setUserTheme}) => {
     }
 
     handleChangeInput1(event) {
-      this.setState({value1: event.target.value });
+      const name = event.target.name;
+      const value = event.target.value;
+      this.setState({'value1' : value}, 
+                    () => { this.validateField(name, value) });
     }
 
     handleChangeInput2(event) {
-      this.setState({value2: event.target.value });
+      const name = event.target.name;
+      const value = event.target.value;
+      this.setState({'value2': value}, 
+                    () => { this.validateField(name, value) });
+    }
+
+    validateField(fieldName, value){
+      let value1Valid = this.state.value1Valid;
+      let value2Valid = this.state.value2Valid;
+
+      switch(fieldName) {
+        case 'color1':
+          value1Valid = value.length > 0;
+          break;
+        case 'color2':
+          value2Valid = value.length > 0;
+          break;
+        default:
+          break;
+      }
+
+      this.setState({
+        value1Valid: value1Valid,
+        value2Valid: value2Valid
+      }, this.validateForm);
+    }
+
+    validateForm() {
+      this.setState({formValid: this.state.value1Valid && this.state.value2Valid});
     }
 
     handleSubmit(event) { 
@@ -64,15 +95,14 @@ const UserColorInput = ({setUserTheme}) => {
       userTheme = {
         colors: {
           brandprimary: this.state.value1,
-          brandsecondary: "#FFC107",
+          brandsecondary: "#6400E4",
           gray: this.state.value2,
           darkgray: "#15141F",
           white: "#fff"
         }
       };
       
-      return (
-    
+      return (    
           <form onSubmit={this.handleSubmit}>
             <Div m={{ r: "1.5rem", y: "1rem"}}>
               <Label textColor="darkgray" htmlFor="color">Färg 1</Label>
@@ -83,7 +113,7 @@ const UserColorInput = ({setUserTheme}) => {
               <input type="color" id="color2" name="color2" value={this.state.value2} onChange={this.handleChangeInput2} />
             </Div>
             <Div d="flex" flexDir={{ xs: 'column', md: 'row' }} justify="flex-end" m={{ t: "2rem"}}>  
-            <ButtonSecondary click={this.props.setUserTheme} hoverbg="brandprimary" hovercolor="white" color="brandprimary" text="Välj färgtema"></ButtonSecondary>
+            <ButtonSecondary disabled={!this.state.formValid} click={this.props.setUserTheme} hoverbg="brandprimary" hovercolor="white" color="brandprimary" text="Välj färgtema"></ButtonSecondary>
             </Div>
           </form>
       );

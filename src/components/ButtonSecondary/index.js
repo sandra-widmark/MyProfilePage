@@ -19,6 +19,7 @@ export default class ButtonSecondary extends React.Component {
                     hoverBg= {this.props.hoverbg} 
                     hoverTextColor={this.props.hovercolor}
                     minW={{ xs: '100%', md: 'auto' }}
+                    disabled={this.props.disabled}
                     >       
                     {this.props.text}
                 </Button>
