@@ -1,6 +1,6 @@
 import React from "react";
 import { Div, Container, Text } from "atomize";
-import Card from "../../components/card";
+import Card from "../../components/Card";
 
 class GithubSection extends React.Component {
   constructor(){
