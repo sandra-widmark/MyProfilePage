@@ -15,20 +15,16 @@ const BasicSideDrawer = ({ isOpen, onClose }) => {
         <nav>
           <ul className="main-nav-list">
             <li>
-            <Icon name="Home" color="brandprimary" size="21px" m={{ r: "0.5rem" }} />
+            <Icon name="Home" color="#6400E4" size="21px" m={{ r: "0.5rem" }} />
               <Link onClick={onClose} to="/">Hem</Link>
             </li>
             <li>
-                <Icon name="Github" color="brandprimary" size="21px" m={{ r: "0.5rem" }} />
+                <Icon name="Github" color="#6400E4" size="21px" m={{ r: "0.5rem" }} />
                 <Link onClick={onClose} to="/projects">Projekt</Link>
             </li>
             <li>
-            <Icon name="Rename" color="brandprimary" size="21px" m={{ r: "0.5rem" }} />
+            <Icon name="Rename" color="#6400E4" size="21px" m={{ r: "0.5rem" }} />
             <a href = {Pdf} target ="_blank" rel="noopener">CV</a>
-            </li>
-            <li>
-                <Icon name="Message" color="brandprimary" size="21px" m={{ r: "0.5rem" }} />
-              <Link onClick={onClose} to="/contact">Kontakt</Link>
             </li>
           </ul>
         </nav>

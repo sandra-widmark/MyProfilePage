@@ -26,15 +26,15 @@ const Toggle = ({ toggleTheme }) => {
           align="center"
           textWeight="700"
           textSize="subheader"
-          textColor="darkgray"
-          bg="white"
+          textColor="white"
+          bg="brandprimary"
           p={{ x: { xs: '1.5rem', md: '2rem' }, y: { xs: '1rem', md: '1rem' }}}
           >
           <Switch
 
           checked={selectedSwitchValue === 'false' ? selected : notSelected}
-            inactiveColor="gray600"
-            activeColor="brandprimary"
+            inactiveColor="brandsecondary"
+            activeColor="darkgray"
             activeShadow="5"
           />
           Ljust/mörkt tema
@@ -43,8 +43,7 @@ const Toggle = ({ toggleTheme }) => {
   };
 
 
-  
-  export default Toggle;
+export default Toggle;
 
 
 

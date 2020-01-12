@@ -4,12 +4,11 @@ import { ThemeProvider, Div} from "atomize";
 import IntroSection from "./compositions/IntroSection";
 import GithubSection from "./compositions/GithubSection";
 import AboutSection from "./compositions/AboutSection";
-import FormSection from "./compositions/FormSection";
-import Header from "./compositions/Header";
-import Footer from "./compositions/Footer";
-import Toggle from "./components/Toggle";
-import ToggleColor from "./components/ToggleColor";
-
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import ThemeSwitch from "./components/ThemeSwitch";
+import UserThemeSection from "./compositions/UserThemeSection";
+import {userTheme} from "./compositions/UserThemeSection";
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,7 +16,7 @@ import {
 } from "react-router-dom";
 
 
-let darkTheme = {
+const darkTheme = {
   colors: {
     brandprimary: "#ffffff",
     brandsecondary: "#FFC107",
@@ -27,23 +26,13 @@ let darkTheme = {
   }
 };
 
-let lightTheme = {
+const lightTheme = {
   colors: {
     brandprimary: "#6400E4",
     brandsecondary: "#FFC107",
     gray: "#F1F3FE",
     darkgray: "#15141F",
     white: "#ffffff"
-  }
-};
-
-let userTheme = {
-  colors: {
-    brandprimary: "#6400E4",
-    brandsecondary: "#6400E4",
-    gray: "#F1F3FE",
-    darkgray: "#6400E4",
-    white: "#6400E4"
   }
 };
 
@@ -59,28 +48,26 @@ function App() {
     }
   }
 
-  const toggleColorTheme = () => {
-    if(theme === lightTheme){
+  const setUserTheme = () => {
       setTheme(userTheme);
-    } else {
-      setTheme(userTheme); 
-    }
   }
 
   return (
-    //hur kan jag komma åt themprovidern i kompnenter? 
+
     <ThemeProvider theme={theme}> 
      <Router>
       <div className="App">
-      <Header/>
-      <Toggle theme={theme} toggleTheme={toggleTheme} />
-      <ToggleColor theme={theme} toggleColorTheme={toggleColorTheme} />
+        <Header/>
+        <ThemeSwitch theme={theme} toggleTheme={toggleTheme} />
         <Switch>
           <Route path="/projects">
             <Projects />
           </Route>
           <Route path="/">
             <Home />
+            <Div bg="gray" id="usertheme">
+              <UserThemeSection theme={theme} setUserTheme={setUserTheme} />
+            </Div>
           </Route> 
         </Switch>
         <Footer/>
@@ -98,9 +85,6 @@ function Home() {
   </Div>
   <Div bg="white">
     <AboutSection />
-  </Div>
-  <Div bg="gray">
-    <FormSection/>
   </Div>
 </Div>
 }

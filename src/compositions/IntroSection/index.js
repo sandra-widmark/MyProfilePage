@@ -25,7 +25,7 @@ export default class IntroSection extends React.Component {
               <Div m={{ r: { xs: '0', md: '3rem' }, y: { xs: '1rem', md: '0' }}} >
                 <ButtonPrimary text="Se mina projekt" link="/projects"></ButtonPrimary>
               </Div>
-              <ButtonSecondary hoverbg="brandprimary" hovercolor="white" color="brandprimary" text="Lämna en kommentar" link="/contact"></ButtonSecondary>
+              <ButtonSecondary hoverbg="brandprimary" hovercolor="white" color="brandprimary" text="Ändra färgtema" link="/home#usertheme"></ButtonSecondary>
             </Div>
           </Row>
         </Container>
