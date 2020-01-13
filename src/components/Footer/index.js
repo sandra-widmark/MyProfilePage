@@ -10,7 +10,7 @@ export default class Footer extends React.Component {
                       textSize="body" 
                       textColor="brandprimary"
                       >
-                    Copyright 2020 Sandra Widmark
+                    Sandra Widmark 2020 
               </Text>
         </Div>
         
