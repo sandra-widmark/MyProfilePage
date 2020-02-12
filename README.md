@@ -2,7 +2,7 @@ A profile page for Sandra Widmark.
 
 ## Available Scripts
 
-In the project directory, you can run:s
+In the project directory, you can run:
 
 ### `npm start`
 
